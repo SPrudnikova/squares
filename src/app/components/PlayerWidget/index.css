@@ -1,0 +1,10 @@
+.playerWidget_container {
+  display: flex;
+  align-items: center;
+}
+
+.playerWidget_icon {
+  width: 15px;
+  height: 15px;
+  margin: 3px;
+}

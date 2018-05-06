@@ -1,0 +1,17 @@
+.colorPicker_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.colorPicker_item {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: solid transparent 2px;
+  margin: 3px;
+}
+
+.colorPicker_item.colorPicker_activeItem {
+  border: solid #66afe9 2px;
+  box-shadow: 0 0 8px rgba(102,175,233,.8);
+}

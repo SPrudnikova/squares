@@ -1,0 +1,20 @@
+.game_heading {
+  text-align: center;
+}
+
+.game_field, .game_field td {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+.game_playersScoreContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.game_restartContainer {
+  text-align: center;
+  padding: 40px 0;
+}
