@@ -5,9 +5,9 @@ import { PLAYER_COLORS } from 'app/constants/playerColors';
 import { ColorModel } from 'app/models';
 
 export interface ColorPickerProps {
-  selectedColors: StringObject,
-  activeColor: ColorModel,
-  handleColorChange: (color: ColorModel) => void,
+  selectedColors: StringObject;
+  activeColor: ColorModel;
+  handleColorChange: (color: ColorModel) => void;
 }
 
 const ColorPicker = ({ activeColor, selectedColors, handleColorChange }: ColorPickerProps) => {

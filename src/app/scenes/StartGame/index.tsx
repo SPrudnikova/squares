@@ -84,7 +84,7 @@ export class StartGame extends React.Component<StartGameScene.Props, StartGameSc
     return (
       <Grid>
         <Row className='show-grid'>
-          <Col xs={8} xsOffset={2}>
+          <Col xs={12} xsOffset={0} sm={8} smOffset={2} md={6} mdOffset={3}>
             <Panel bsStyle='primary'>
               <Panel.Heading>
                 <Panel.Title componentClass='h3'>Enter game parameters</Panel.Title>

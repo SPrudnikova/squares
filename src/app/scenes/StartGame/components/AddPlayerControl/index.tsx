@@ -7,8 +7,8 @@ import { PlayerModel, ColorModel } from 'app/models';
 
 export namespace AddPlayerControlComponent {
   export interface Props {
-    selectedColors: StringObject,
-    addPlayer: (player: PlayerModel) => void,
+    selectedColors: StringObject;
+    addPlayer: (player: PlayerModel) => void;
   }
   export interface State {
     name: string;

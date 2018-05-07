@@ -5,7 +5,7 @@ import { PlayerModel } from 'app/models';
 
 export interface PlayerWidgetProps {
   player: PlayerModel;
-  showScore?: boolean
+  showScore?: boolean;
 }
 
 const PlayerWidget = ({ player, showScore }: PlayerWidgetProps) => {

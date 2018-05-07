@@ -3,7 +3,7 @@ import { RouteComponentProps } from 'react-router';
 import { GameActions } from 'app/redux/actions';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
-import { Grid, Row, Col, Button } from 'react-bootstrap';
+import { Grid, Row, Col, Button, Panel } from 'react-bootstrap';
 
 import * as style from './index.css';
 import { RootState } from 'app/redux/reducers';
@@ -16,10 +16,10 @@ import { WinnerModal } from 'app/scenes/Game/components/WinnerModal';
 export namespace GameScene {
   export interface Props extends RouteComponentProps<void> {
     actions: GameActions;
-    game: GameModel,
+    game: GameModel;
   }
   export interface State {
-    showModal: boolean,
+    showModal: boolean;
   }
 }
 
@@ -45,11 +45,11 @@ export class Game extends React.Component<GameScene.Props, GameScene.State> {
 
     if (!isFinished) {
       const activePlayerName = activePlayer ? activePlayer.name : null;
-      return <h3 className={style.game_heading}>Active player: {activePlayerName}</h3>;
+      return <span className={style.game_heading}>Active player: {activePlayerName}</span>;
     } else if (isFinished && winner) {
-      return <h3 className={style.game_heading}>Game over. Winner is {winner.name}.</h3>;
+      return <span className={style.game_heading}>Game over. Winner is {winner.name}.</span>;
     }
-    return <h3 className={style.game_heading}>Game over. There is no winner.</h3>;
+    return <span className={style.game_heading}>Game over. There is no winner.</span>;
   };
 
   renderField = (): JSX.Element[] => {
@@ -91,29 +91,36 @@ export class Game extends React.Component<GameScene.Props, GameScene.State> {
     return (
       <Grid>
         <Row className='show-grid'>
-          <Col xs={6} xsOffset={3}>
+          <Col xs={12} xsOffset={0} sm={8} smOffset={2} md={6} mdOffset={3}>
 
-            {this.renderHeading()}
+            <Panel bsStyle='primary'>
+              <Panel.Heading>
+                <Panel.Title componentClass='h3'>{this.renderHeading()}</Panel.Title>
+              </Panel.Heading>
 
-            <table className={style.game_field}>
-              <tbody>
-                {this.renderField()}
-              </tbody>
-            </table>
+              <Panel.Body>
+                <table className={style.game_field}>
+                  <tbody>
+                    {this.renderField()}
+                  </tbody>
+                </table>
 
-            <div className={style.game_playersScoreContainer}>
-              {this.renderPlayersScores()}
-            </div>
+                <div className={style.game_playersScoreContainer}>
+                  {this.renderPlayersScores()}
+                </div>
 
-            <div className={style.game_restartContainer}>
-              <Button bsStyle='primary' onClick={this.restartGame}>Restart game</Button>
-            </div>
+                <div className={style.game_restartContainer}>
+                  <Button bsStyle='primary' onClick={this.restartGame}>Restart game</Button>
+                </div>
 
-            <WinnerModal
-              winner={this.props.game.winner}
-              showModal={showModal}
-              close={this.closeModal}
-              restart={this.restartGame}/>
+                <WinnerModal
+                  winner={this.props.game.winner}
+                  showModal={showModal}
+                  close={this.closeModal}
+                  restart={this.restartGame}/>
+              </Panel.Body>
+
+            </Panel>
 
           </Col>
         </Row>

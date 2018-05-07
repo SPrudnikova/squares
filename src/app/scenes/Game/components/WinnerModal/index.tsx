@@ -5,10 +5,10 @@ import { PlayerModel } from 'app/models';
 
 
 export interface GameProps {
-  winner: PlayerModel | null,
-  showModal: boolean,
-  close: () => void,
-  restart: () => void,
+  winner: PlayerModel | null;
+  showModal: boolean;
+  close: () => void;
+  restart: () => void;
 }
 
 const WinnerModal = ({ close, winner, showModal, restart }: GameProps) => {

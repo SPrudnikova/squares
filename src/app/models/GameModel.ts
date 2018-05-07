@@ -6,7 +6,7 @@ export interface GameModel {
   fieldSize: number;
   activePlayer: PlayerModel | null;
   winner: PlayerModel | null;
-  isFinished: boolean
+  isFinished: boolean;
 }
 
 export namespace GameModel {

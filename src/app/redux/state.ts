@@ -2,7 +2,7 @@ import { GameModel } from 'app/models';
 import { RouterState } from 'react-router-redux';
 
 export interface RootState {
-  game: RootState.GameState,
+  game: RootState.GameState;
   router: RouterState;
 }
 
